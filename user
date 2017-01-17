@@ -1,0 +1,26 @@
+DROP DATABASE IF EXISTS db_user;
+CREATE DATABASE db_user;
+DROP TABLE IF EXISTS db_user.register;
+CREATE TABLE db_user.register(
+  id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'PK',
+  mailboxId INT COMMENT 'FK',
+  accountNumber VARCHAR(255) COMMENT '账号',
+  password VARCHAR(255)COMMENT '密码'
+  )COMMENT '注册表';
+
+SELECT *
+FROM db_user.register;
+
+
+CREATE TABLE IF NOT EXISTS db_user.entry(
+  id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'PK',
+  mailbox VARCHAR(255) COMMENT '邮箱',
+  password VARCHAR(255) COMMENT '密码'
+)COMMENT '登录表';
+
+
+
+CREATE TABLE IF NOT EXISTS db_user.logout(
+  id INT AUTO_INCREMENT PRIMARY KEY COMMENT 'PK'
+
+)COMMENT '注销表';
